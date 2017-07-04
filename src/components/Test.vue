@@ -3,11 +3,9 @@
 <h1>{{message}}</h1>
 <button v-on:click="click();"> alert </button>
 <p v-if="show"> You can see me now. </p>
-<ul v-for="n in list">
-  <li>{{n}}</li>
-</ul>
+<p>{{list}} </p>
+<p> {{reversedList}} </p>
 </div>
-
 </template>
 
 <script>
@@ -24,12 +22,20 @@ module.exports = {
       alert('coucou')
       this.show = !(this.show)
     }
+  },
 
+  computed: {
+    reversedList: function () {
+      return this.list.slice().reverse()
+    }
   }
 
 }
 </script>
+h1 {
 
+  color : red;
+}
 <style scoped>
 
 </style>
